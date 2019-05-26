@@ -42,7 +42,8 @@ for (i = 0; i < 12; i += 1) {
 // -----------
 
 // HELPER FUNCTIONS
-// -----------String.prototype.capitalize = function() {
+// -----------
+String.prototype.capitalize = function() {
   return this.replace(/(?:^|\s)\S/g, function(a) {
     return a.toUpperCase();
   });
