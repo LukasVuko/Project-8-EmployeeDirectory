@@ -42,18 +42,22 @@ for (i = 0; i < 12; i += 1) {
 // -----------
 
 // HELPER FUNCTIONS
-// -----------
+// -----------String.prototype.capitalize = function() {
+  return this.replace(/(?:^|\s)\S/g, function(a) {
+    return a.toUpperCase();
+  });
+};
 
 function generateCard(data) {
   let card = `
     <div class="card">
       <img src="${data.picture.medium}" />
       <div class="card-inner">
-        <h3 class="name">${data.name.first} ${data.name.last}</h3>
+        <h3 class="name">${data.name.first.capitalize()} ${data.name.last.capitalize()}</h3>
         <p class="email">${data.email}</p>
-        <p class="city">${data.location.city}</p>
+        <p class="city">${data.location.city.capitalize()}</p>
         <p class="cell">${data.phone}</p>
-        <p class="address">${data.location.street}, ${data.location.state}, ${
+        <p class="address">${data.location.street.capitalize()}, ${data.location.state.capitalize()}, ${
     data.location.postcode
   }</p>
         <p class="birthday">${data.dob.date.substring(2, 10)}</p>
